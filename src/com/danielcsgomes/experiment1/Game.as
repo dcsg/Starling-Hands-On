@@ -1,4 +1,4 @@
-package
+package com.danielcsgomes.experiment1
 {
 	import starling.display.DisplayObject;
 	import starling.display.Quad;

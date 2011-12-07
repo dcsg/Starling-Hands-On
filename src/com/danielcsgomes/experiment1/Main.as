@@ -1,4 +1,4 @@
-package
+package com.danielcsgomes.experiment1
 {
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
