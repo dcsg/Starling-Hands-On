@@ -1,4 +1,4 @@
-package com.danielcsgomes.experiment1
+package com.danielcsgomes.squareRotation
 {
 	import starling.display.DisplayObject;
 	import starling.display.Quad;
