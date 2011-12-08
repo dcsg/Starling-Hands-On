@@ -11,13 +11,13 @@ To be able to test them you need to do three things:
 
 ## Experiments
 
- * Square Rotation
- * Particles
+ * [Square Rotation](https://github.com/danielcsgomes/Starling-Hands-On/tree/master/src/com/danielcsgomes/squareRotation "Square Rotation")
+ * [Particles](https://github.com/danielcsgomes/Starling-Hands-On/tree/master/src/com/danielcsgomes/particles "Particles")
 
 ## Required Libs
 
- * Starling Framework: https://github.com/PrimaryFeather/Starling-Framework
- * Starling Extension: Particle System: https://github.com/PrimaryFeather/Starling-Extension-Particle-System
- * Stats: https://github.com/hi-res/hires.as3
+ * [Starling Framework](https://github.com/PrimaryFeather/Starling-Framework "Starling Framework")
+ * [Starling Extension: Particle System](https://github.com/PrimaryFeather/Starling-Extension-Particle-System "Starling Extension: Particle System")
+ * [Stats](https://github.com/hi-res/hires.as3 "Stats")
  
  Add them to your Build Path.
