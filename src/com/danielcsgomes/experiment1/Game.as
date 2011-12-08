@@ -54,7 +54,7 @@ package com.danielcsgomes.experiment1
 			g-=(g-gDest)*.01;
 			b-=(b-bDest)*.01;
 			
-			var color:uint= r << 16 | g << 8 | b; 
+				var color:uint= r << 16 | g << 8 | b; 
 			q.color = color;
 			
 			// when reaching the color, pick another one
