@@ -1,5 +1,9 @@
 package com.danielcsgomes.particles
 {
+	import flash.events.MouseEvent;
+	import flash.geom.Point;
+	import flash.ui.Mouse;
+	
 	import starling.core.Starling;
 	import starling.display.Sprite;
 	import starling.events.EnterFrameEvent;
@@ -11,28 +15,28 @@ package com.danielcsgomes.particles
 	import starling.extensions.ParticleSystem;
 	import starling.text.TextField;
 	import starling.textures.Texture;
-
-	public class Particles extends Sprite
+	
+	public class FollowParticles extends Sprite
 	{
 		// particle designer configurations
 		
-		[Embed(source="../assets/fire.pex", mimeType="application/octet-stream")]
-		private static const FireConfig:Class;
+		[Embed(source="../assets/jetfire.pex", mimeType="application/octet-stream")]
+		private static const JetFireConfig:Class;
 		
 		// particle textures
 		
 		[Embed(source = "../assets/fire.png")]
-		private static const FireParticle:Class;
+		private static const JetFireParticle:Class;
 		
 		private var mParticleSystem:ParticleSystem;
 		private var mFrameLabel:TextField;
 		private var mFrameCount:int;
 		private var mFrameTime:Number;
 		
-		public function Particles()
+		public function FollowParticles()
 		{
-			var psConfig:XML = XML(new FireConfig());
-			var psTexture:Texture = Texture.fromBitmap(new FireParticle());
+			var psConfig:XML = XML(new JetFireConfig());
+			var psTexture:Texture = Texture.fromBitmap(new JetFireParticle());
 			
 			mParticleSystem = new ParticleDesignerPS(psConfig, psTexture);
 			
@@ -45,13 +49,13 @@ package com.danielcsgomes.particles
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			
-			//Center the animations at the start
+			//Center the animations at the start	
 			mParticleSystem.emitterX = stage.stageWidth/2;
 			mParticleSystem.emitterY = stage.stageHeight/2;
 			mParticleSystem.start();
 			addChild(mParticleSystem);
 			
-			addEventListener(Event.ENTER_FRAME, onEnterFrame);
+			addEventListener(Event.ENTER_FRAME, onEnterFrame);			
 			
 			stage.addEventListener(TouchEvent.TOUCH, onTouch);
 			Starling.juggler.add(mParticleSystem);
@@ -78,6 +82,8 @@ package com.danielcsgomes.particles
 		private function onTouch(event:TouchEvent):void
 		{
 			var touch:Touch = event.getTouch(stage);
+			mParticleSystem.emitterX = touch.globalX;
+			mParticleSystem.emitterY = touch.globalY;
 			if (touch && touch.phase != TouchPhase.HOVER)
 			{
 				mParticleSystem.emitterX = touch.globalX;
