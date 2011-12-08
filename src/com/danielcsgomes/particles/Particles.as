@@ -35,20 +35,24 @@ package com.danielcsgomes.particles
 			var psTexture:Texture = Texture.fromBitmap(new FireParticle());
 			
 			mParticleSystem = new ParticleDesignerPS(psConfig, psTexture);
-			mParticleSystem.emitterX = 500;
-			mParticleSystem.emitterY = 300;
-			mParticleSystem.start();
-			addChild(mParticleSystem);
 			
 			// add event handlers for touch and FPS
-			
 			addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
-			addEventListener(Event.ENTER_FRAME, onEnterFrame);
 		}
 		
 		private function onAddedToStage(event:Event):void
 		{
+			removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+			
+			//Center the animations at the start
+			mParticleSystem.emitterX = stage.stageWidth/2;
+			mParticleSystem.emitterY = stage.stageHeight/2;
+			mParticleSystem.start();
+			addChild(mParticleSystem);
+			
+			addEventListener(Event.ENTER_FRAME, onEnterFrame);
+			
 			stage.addEventListener(TouchEvent.TOUCH, onTouch);
 			Starling.juggler.add(mParticleSystem);
 		}
