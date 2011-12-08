@@ -12,7 +12,7 @@ To be able to test them you need to do three things:
 ## Experiments
 
  * [Square Rotation](https://github.com/danielcsgomes/Starling-Hands-On/tree/master/src/com/danielcsgomes/squareRotation "Square Rotation")
- * [Particles](https://github.com/danielcsgomes/Starling-Hands-On/tree/master/src/com/danielcsgomes/particles "Particles")
+ * [Follow and Touch Fire - Particles Experiments](https://github.com/danielcsgomes/Starling-Hands-On/tree/master/src/com/danielcsgomes/particles "Follow and Touch Fire - Particles Experiments")
 
 ## Required Libs
 
