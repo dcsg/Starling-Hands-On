@@ -84,11 +84,6 @@ package com.danielcsgomes.particles
 			var touch:Touch = event.getTouch(stage);
 			mParticleSystem.emitterX = touch.globalX;
 			mParticleSystem.emitterY = touch.globalY;
-			if (touch && touch.phase != TouchPhase.HOVER)
-			{
-				mParticleSystem.emitterX = touch.globalX;
-				mParticleSystem.emitterY = touch.globalY;
-			}
 		}
 	}
 }
